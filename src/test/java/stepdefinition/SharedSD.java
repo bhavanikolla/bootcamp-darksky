@@ -13,7 +13,7 @@ public class SharedSD {
 	private static WebDriver driver = null;
 
 	@Before
-	public static void before() {
+	public static void before() throws InterruptedException {
 
 		ConfigReader configReader = new ConfigReader();
 		System.setProperty("webdriver.chrome.driver",
@@ -22,15 +22,17 @@ public class SharedSD {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(configReader.getUrl());
+		Thread.sleep(6000);
+
 	}
 
 	@After
-	public static void after() {
-		if (driver != null) {
-			driver.manage().deleteAllCookies();
-			driver.quit();
-		}
-	}
+	//public static void after() {
+	//	if (driver != null) {
+	//		driver.manage().deleteAllCookies();
+	//		driver.quit();
+	//	}
+	//}
 
 	public static WebDriver getDriver() {
 		return driver;

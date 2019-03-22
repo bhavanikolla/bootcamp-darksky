@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * Created by Mohammad Mutakim on 11/11/17.
+ * Created by Mohammad Muntakim
  */
 public class ConfigReader {
 
